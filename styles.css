@@ -1,0 +1,110 @@
+body{
+    background: #F3F5FC;
+}
+
+#logo {
+    Width: 120px;
+    Height: 48px;
+    margin-top: 40px;
+    margin-left: 40px;
+    Gap: 40px;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.container-text-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.container-result {
+    width: 40%;
+    height: 80vh;
+    margin-right: 50px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+#message {
+    Width: 577px;
+    Height: 48px;
+    margin-top: 70px;
+    margin-left: 240px;
+    font-size: 40px;
+}
+
+#rulers{
+margin-top: 45%;
+margin-left: 240px;
+}
+
+.buttons {
+    width: 680px;
+    height: 67px;
+    margin-left: 240px;
+    Gap: 24px;
+    display: flex;
+    flex-direction: row;
+}
+
+#encrypt {
+    width: 328px;
+    height: 67px;
+    Gap: 24px;
+    border-radius: 20px;
+    background: #0A3871;
+    
+}
+
+#decrypt {
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    padding: 24px;
+    Gap: 8px;
+}
+
+#image-doll {
+    width: 336px;
+    height: 304px;
+    margin-top: 125px;
+
+}
+
+#message1{
+    margin-top: 20px;
+    font-size: 30px;
+
+}
+#message2{
+     color: #495057;
+}
+
+#result{
+    margin-top: 20px;
+    width: 500px;
+    height: 600px;
+    border: none;
+    display: none;
+}
+
+#copy {
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    padding: 24px;
+    Gap: 8px;
+    background-color: white;
+
+    display: none;
+}
+
