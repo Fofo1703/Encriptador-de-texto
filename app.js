@@ -1,18 +1,28 @@
+const textarea = document.getElementById('message');
 
-function encrypt() {
+textarea.addEventListener('input', function() {
+  this.style.height = 'auto'; // Restaura la altura a la altura automática predeterminada
+  this.style.height = this.scrollHeight + 'px'; // Establece la altura según el contenido
+});
+
+
+
+function elementView() {
 	document.getElementById('copy').style.display = "block";
 	document.getElementById('result').style.display = "block";
+	document.getElementById('dowland-button').style.display = "block";
 	document.getElementById('image-doll').style.display = "none";
 	document.getElementById('message1').style.display = "none";
 	document.getElementById('message2').style.display = "none";
 
-	let originaltext = document.getElementById(`message`).value;
-	encryptText(originaltext);
+
 }
 
 
 
-function encryptText(text) {
+function encryptText() {
+	let text = document.getElementById(`message`).value;
+
 	let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
 	for (let i = 0; i < matrizCodigo.length; i++) {
 		if (text.includes(matrizCodigo[i][0])) {
@@ -20,6 +30,10 @@ function encryptText(text) {
 		}
 	}
 	document.getElementById(`result`).value = text;
+
+	document.getElementById(`message`).value = null;
+
+	elementView();
 }
 
 
@@ -34,6 +48,9 @@ function decryptText() {
 	}
 	document.getElementById(`result`).value = text;
 
+	document.getElementById(`message`).value = null;
+
+	elementView();
 }
 
 function handleFile() {
@@ -54,6 +71,9 @@ function handleFile() {
 				const textoExtraido = result.value;
 
 				document.getElementById(`message`).value = textoExtraido;
+
+				    // Dispara el evento input para ajustar el tamaño del textarea
+					document.getElementById(`message`).dispatchEvent(new Event('input'));
 			});
 		};
 
@@ -91,5 +111,22 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 });
 
+function descargarDocumento() {
+	const contenido = document.getElementById('result').value;
+	const nombreArchivo = 'documento.txt'; // Puedes cambiar el nombre del archivo según tu preferencia
 
-
+	// Crea un objeto Blob con el contenido del textarea
+	const blob = new Blob([contenido], { type: 'text/plain' });
+  
+	// Crea un enlace para descargar el archivo
+	const enlaceDescarga = document.createElement('a');
+	enlaceDescarga.href = URL.createObjectURL(blob);
+	enlaceDescarga.download = nombreArchivo;
+  
+	// Simula un clic en el enlace de descarga
+	document.body.appendChild(enlaceDescarga);
+	enlaceDescarga.click();
+  
+	// Elimina el enlace de descarga
+	document.body.removeChild(enlaceDescarga);
+  }

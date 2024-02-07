@@ -7,6 +7,8 @@
     <title>Encriptador de Texto</title>
     <link rel="stylesheet" href="styles.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
 </head>
 
@@ -20,14 +22,19 @@
     <div class="container">
 
         <div class="container-text-buttons">
-            <input type="text" id="message" placeholder="Ingrese el texto aqui">
-            <input type="file" id="fileInput" onchange="handleFile()" accept=".doc, .docx, .pdf" />
+            <!-- <input type="text" id="message" placeholder="Ingrese el texto aqui"> -->
+            <textarea id="message" placeholder="Ingrese el texto aquí" ></textarea>
+            <input type="file" id="fileInput" onchange="handleFile()" accept=".docx, .txt" />
 
-            <label id="rulers">&#33;Solo letras minúsculas y sin acentos</label>
-            <div class="buttons">
-                <button id="encrypt" onclick="encrypt()">Encriptar</button>
-                <button id="decrypt" onclick="decryptText()">Desencriptar</button>
+            <div id="prue">
+                <label id="rulers"><i class="fa-solid fa-circle-exclamation"></i>Solo letras minúsculas y sin acentos</label>
+                <div class="buttons">
+                    <button id="encrypt" onclick="encryptText()">Encriptar</button>
+                    <button id="decrypt" onclick="decryptText()">Desencriptar</button>
+                </div>
+                
             </div>
+            &#33;<i class="fas fa-exclamation"></i>
 
         </div>
 
@@ -37,14 +44,21 @@
             <label id="message1"><strong>Ningún mensaje fue encontrado</strong></label>
             <Label id="message2">Ingresa el texto que desees encriptar o desencriptar.</Label>
             <textarea id="result" readonly> </textarea>
-            <button id="copy">Copiar</button>
+
+            <div id="copy-dowland">
+                <button id="copy">Copiar</button>
+                <button id="dowland-button" onclick="descargarDocumento('contenido')" ><i class="fas fa-download download-icon" id="dowland"></i></button>
+            </div>
+         
+            
         </div>
+        
 
     </div>
 
     <script src="app.js"></script>
     <script src="https://unpkg.com/mammoth@1.0.0/mammoth.browser.min.js"></script>
-
+    
 
 </body>
 

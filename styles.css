@@ -1,4 +1,4 @@
-body{
+body {
     background: #F3F5FC;
 }
 
@@ -24,7 +24,7 @@ body{
 
 .container-result {
     width: 40%;
-    height: 800;
+    height: 800px;
     margin-right: 50px;
     background-color: #ffffff;
     border-radius: 30px;
@@ -35,20 +35,38 @@ body{
 }
 
 #message {
-    Width: 577px;
-    Height: 48px;
+    width: 577px;
+    height: 48px;
+    background: #F3F5FC;
+    max-height: 500px;
     margin-top: 70px;
     margin-left: 240px;
     font-size: 25px;
+
+    border: none;
+    outline: none;
+
+    /* Oculta el scrollbar vertical pero permite desplazamiento */
+    overflow-y: auto;
+    scrollbar-width: thin;
+    /* Ancho del scrollbar (delgado) */
+    scrollbar-color: transparent transparent;
+    /* Color del scrollbar (transparente) */
 }
 
-#fileInput{
+
+
+#fileInput {
     margin-left: 240px;
 }
 
-#rulers{
-margin-top: 45%;
-margin-left: 240px;
+#prue {
+    position: absolute;
+    top: 733px;
+}
+
+#rulers {
+    margin-left: 240px;
 }
 
 .buttons {
@@ -66,7 +84,7 @@ margin-left: 240px;
     Gap: 24px;
     border-radius: 20px;
     background: #0A3871;
-    
+
 }
 
 #decrypt {
@@ -84,16 +102,17 @@ margin-left: 240px;
 
 }
 
-#message1{
+#message1 {
     margin-top: 20px;
     font-size: 30px;
 
 }
-#message2{
-     color: #495057;
+
+#message2 {
+    color: #495057;
 }
 
-#result{
+#result {
     margin-top: 20px;
     width: 500px;
     height: 600px;
@@ -104,6 +123,11 @@ margin-left: 240px;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+}
+
+#copy-dowland {
+    display: flex;
+    flex-direction: row;
 }
 
 #copy {
@@ -117,3 +141,17 @@ margin-left: 240px;
     margin-top: 20px;
 }
 
+#dowland-button {
+    width: 100px;
+    height: 67px;
+    margin-top: 20px;
+    background-color: white;
+    display: none;
+    border-radius: 24px;
+    margin-left: 20px;
+}
+
+#dowland {
+    font-size: 52px;
+
+}
