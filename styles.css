@@ -14,12 +14,15 @@ body {
 .container {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    height: auto;
 }
 
 .container-text-buttons {
     display: flex;
     flex-direction: column;
     width: 60%;
+    margin-left: 5%;
 }
 
 .container-result {
@@ -40,9 +43,7 @@ body {
     background: #F3F5FC;
     max-height: 500px;
     margin-top: 70px;
-    margin-left: 240px;
     font-size: 25px;
-
     border: none;
     outline: none;
 
@@ -55,24 +56,19 @@ body {
 }
 
 
-
-#fileInput {
-    margin-left: 240px;
-}
-
 #prue {
     position: absolute;
     top: 733px;
+
 }
 
 #rulers {
-    margin-left: 240px;
+    margin-left: 1%;
 }
 
 .buttons {
     width: 680px;
     height: 67px;
-    margin-left: 240px;
     Gap: 24px;
     display: flex;
     flex-direction: row;
@@ -114,7 +110,7 @@ body {
 
 #result {
     margin-top: 20px;
-    width: 500px;
+    width: 80%;
     height: 600px;
     border: none;
     outline: none;
@@ -154,4 +150,116 @@ body {
 #dowland {
     font-size: 52px;
 
+}
+
+@media (max-width: 1300px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    
+    }
+
+    .container-text-buttons {
+        align-items: center;
+    }
+
+
+    #prue {
+        position: absolute;
+        top: 533px;
+    }
+
+    #message {
+        width: 577px;
+        height: 48px;
+        background: #F3F5FC;
+        max-height: 330px;
+
+    }
+
+
+    .container-result {
+
+        position: absolute;
+        top: 633px;
+        width: 90%;
+        height: 430px;
+        margin: auto; /* Esto centrará horizontalmente el div */
+
+    }
+
+    .buttons {
+        width: 500px;
+        height: 57px;
+        Gap: 24px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #image-doll {
+        display: none;
+    }
+
+    #message1 {
+        margin-top: 40px;
+
+    }
+
+    #result {
+        height: 300px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: auto;
+
+    }
+
+    #message {
+        width: 300px;
+        height: 58px;
+        background: #F3F5FC;
+        max-height: 230px;
+
+    }
+
+    .container-text-buttons {
+        display: flex;
+        align-items: center;
+    }
+
+    #prue {
+        top: 433px;
+        width: 320PX;
+    }
+
+    .buttons {
+        flex-direction: column;
+        height: 200px;
+        
+    }
+
+    .container-result {
+        width: 90%;
+        height: 300px;
+        margin: auto;
+        margin-top: 20px; 
+
+    }
+
+    #encrypt,#decrypt {
+        width: 300px;
+    }
+
+    #copy{
+        width: 200px;
+    }
 }
