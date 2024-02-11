@@ -8,11 +8,11 @@ function successfulCopying() {
 
 }
 
-function documentError() {
+function documentError(message) {
     Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Formato de archivo no compatible!",
+        text: message,
 
     });
 
