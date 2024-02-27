@@ -1,46 +1,49 @@
 body {
+    margin: 0;
+    padding: 0;
     background: #F3F5FC;
-}
-
-#logo {
-    Width: 120px;
-    Height: 48px;
-    margin-top: 40px;
-    margin-left: 40px;
-    Gap: 40px;
-
 }
 
 .container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     width: 100%;
-    height: auto;
+    margin: auto;
+    height: 100vh;
+
 }
 
-.container-text-buttons {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
+.logo {
     margin-left: 5%;
 }
 
-.container-result {
-    width: 40%;
-    height: 800px;
-    margin-right: 50px;
-    background-color: #ffffff;
-    border-radius: 30px;
+.left {
+    /* background-color: aqua; */
+    margin-top: 5vh;
+    height: 95vh;
+
+}
+
+.elements-left {
+    margin: auto;
+    /* background-color: bisque; */
+    width: 80%;
+    height: 89vh;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    align-items: center;
+    justify-content: space-between;
+}
+
+.elements-text{
+    width: 100%;
 }
 
 #message {
-    width: 577px;
-    height: 48px;
+    width: 80%;
+    max-height: 500px;
+    margin-left: 13%;
     background: #F3F5FC;
+    text-transform: lowercase;
     max-height: 500px;
     margin-top: 70px;
     font-size: 25px;
@@ -48,72 +51,101 @@ body {
     outline: none;
 
     /* Oculta el scrollbar vertical pero permite desplazamiento */
-    overflow-y: auto;
+    overflow-y: auto; 
     scrollbar-width: thin;
     /* Ancho del scrollbar (delgado) */
     scrollbar-color: transparent transparent;
     /* Color del scrollbar (transparente) */
-}
-
-
-#btn-encrypt-decrypt {
-    position: absolute;
-    top: 733px;
 
 }
 
-#rulers {
-    margin-left: 1%;
+#fileInput {
+    margin-left: 13%;
 }
 
-.buttons {
-    width: 680px;
+.btn-encrypt-decrypt {
+    margin-left: 13%;
+}
+
+#ruler {
+    width: 100%;
+
+}
+
+.encrypt-decrypt {
+    margin-bottom: 5vh;
+    width: 87%;
+
+}
+
+#encrypt{
+    width: 44%;
     height: 67px;
-    Gap: 24px;
-    display: flex;
-    flex-direction: row;
-}
-
-#encrypt {
-    width: 328px;
-    height: 67px;
-    Gap: 24px;
     border-radius: 20px;
     background: #0A3871;
-
+    margin-left: 0%;
 }
 
 #decrypt {
-    width: 328px;
+    width: 44%;
     height: 67px;
+    border-radius: 20px;
+    margin-left: 8%;
+}
+
+/* .right {
+    background-color:  chocolate;
+} */
+
+
+.elements-right {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 91vh;
+    background-color: #ffffff;
     border-radius: 24px;
-    padding: 24px;
-    Gap: 8px;
+    margin-top: 6vh;
+    align-items: center;
 }
 
 #image-doll {
-    width: 336px;
-    height: 304px;
-    margin-top: 125px;
+    width: 60%;
+    height: 250px;
+    margin-top: 35%;
 
+    /* display: none; */
 }
 
 #message1 {
+    font: bold 25px sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 20px;
-    font-size: 30px;
 
+    /* display: none; */
 }
 
+
 #message2 {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
     color: #495057;
+
+    /* display: none; */
 }
 
 #result {
-    margin-top: 20px;
-    width: 80%;
-    height: 600px;
+    width: 90%;
+    height: 80%;
+    margin-top: 40px;
     border: none;
     outline: none;
+
     display: none;
     user-select: none;
     -moz-user-select: none;
@@ -122,29 +154,32 @@ body {
 }
 
 #copy-dowland {
+    width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 40px;
+
+    
 }
 
-#copy {
-    width: 328px;
+#copy-button{
+    width: 50%;
     height: 67px;
-    border-radius: 24px;
-    padding: 24px;
-    Gap: 8px;
-    background-color: white;
+    border-radius: 20px;
+    background-color: #ffffff;
+
     display: none;
-    margin-top: 20px;
 }
 
-#dowland-button {
-    width: 100px;
+#dowland-button{
+    width: 30%;
     height: 67px;
-    margin-top: 20px;
-    background-color: white;
+    border-radius: 20px;
+    background-color: #ffffff;
+
     display: none;
-    border-radius: 24px;
-    margin-left: 20px;
 }
 
 #dowland {
@@ -152,50 +187,32 @@ body {
 
 }
 
+/* Media query para pantallas de hasta 1300px de ancho */
 @media (max-width: 1300px) {
     .container {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: auto;
+        grid-template-columns: 1fr; 
+    }
     
+    .left{
+        height: 73vh;
     }
 
-    .container-text-buttons {
-        align-items: center;
+    .elements-left{
+        width: 100%;
+        height: 100%;
     }
 
-
-    #btn-encrypt-decrypt {
-        position: absolute;
-        top: 533px;
+    #message{
+        max-height: 400px;
     }
 
-    #message {
-        width: 577px;
-        height: 48px;
-        background: #F3F5FC;
-        max-height: 330px;
+    /* .right {
+        background: red;
+    } */
 
-    }
-
-
-    .container-result {
-
-        position: absolute;
-        top: 633px;
-        width: 90%;
-        height: 430px;
-        margin: auto; /* Esto centrará horizontalmente el div */
-
-    }
-
-    .buttons {
-        width: 500px;
-        height: 57px;
-        Gap: 24px;
-        display: flex;
-        flex-direction: row;
+     .elements-right{
+        height: 11vh;
+        margin: auto;
     }
 
     #image-doll {
@@ -203,63 +220,88 @@ body {
     }
 
     #message1 {
-        margin-top: 40px;
+        flex-direction: row;
+    }
+    
+    
+    #message2 {
+        flex-direction: row;
+    } 
 
+    #result{
+        height: 200px;
     }
 
-    #result {
-        height: 300px;
+    .right-expanded {
+        height: 420px !important; /* Ajusta la altura cuando el textarea es visible */
+    } 
+
+    .elements-right-expanded {
+        height: 370px !important; /* Ajusta la altura cuando el textarea es visible */
+        margin-top: 25px;
     }
 
 }
 
 @media (max-width: 600px) {
 
-    .container {
+    .left{
+        height: 68vh;
+    }
+
+    .elements-left{
+        height: 100;
+    }
+
+    #message{
+        max-height: 280px;
+    }
+
+    .btn-encrypt-decrypt{
+        margin-left: 0px;
+        text-align: center;
+
+    }
+
+    .encrypt-decrypt{
         display: flex;
-        align-items: center;
-        width: 100%;
-        height: auto;
-
-    }
-
-    #message {
-        width: 300px;
-        height: 58px;
-        background: #F3F5FC;
-        max-height: 230px;
-
-    }
-
-    .container-text-buttons {
-        display: flex;
-        align-items: center;
-    }
-
-    #btn-encrypt-decrypt {
-        top: 433px;
-        width: 320PX;
-    }
-
-    .buttons {
         flex-direction: column;
-        height: 200px;
-        
+        width: 100%;
+        align-items: center;
     }
 
-    .container-result {
+
+    #encrypt{
         width: 90%;
-        height: 300px;
-        margin: auto;
-        margin-top: 20px; 
-
     }
 
-    #encrypt,#decrypt {
-        width: 300px;
+    #decrypt{
+        margin-top: 20px;
+        width: 90%;
+        margin-left: 0px;
     }
 
-    #copy{
-        width: 200px;
+    #message1 {
+        font-size: 20px;
+        flex-direction: column;
     }
+    
+    
+    #message2 {
+        font-size: 15px;
+        flex-direction: column;
+    } 
+    
+    .elements-right{
+        height: 15vh;
+        margin-top: 30px;
+    }
+
+    #copy-button{
+        width: 70%;
+    }
+    #dowland-button{
+        width: 15%;
+    }
+
 }

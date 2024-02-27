@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de Texto</title>
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -13,54 +14,61 @@
 
 <body>
 
-    <header>
-
-        <img src="images/Logo.png" id="logo">
-    </header>
-
     <div class="container">
 
-        <div class="container-text-buttons">
-            <textarea id="message" placeholder="Ingrese el texto aquí"></textarea>
-            <input type="file" id="fileInput" onchange="handleFile()" accept=".docx" />
+        <div class="left">
+            <img class="logo" src="images/Logo.png" alt="Logo">
 
-            <div id="btn-encrypt-decrypt">
-                <label id="rulers"><i class="fas fa-exclamation"></i>Solo letras minúsculas y sin
-                    acentos</label>
-                <div class="buttons">
-                    <button id="encrypt" onclick="encryptText()">Encriptar</button>
-                    <button id="decrypt" onclick="decryptText()">Desencriptar</button>
+            <div class="elements-left">
+
+                <div class="elements-text">
+                    <textarea id="message" placeholder="Ingrese el texto aquí"></textarea>
+                    <input type="file" id="fileInput" onchange="handleFile()" accept=".docx" />
+                </div>
+
+                <div class="btn-encrypt-decrypt">
+                    <Label id="ruler"><Span>!</Span>Solo letras minúsculas y sin acentos</Label>
+                    <div class="encrypt-decrypt">
+                        <button id="encrypt" onclick="encryptText()">Encriptar</button>
+                        <button id="decrypt" onclick="decryptText()">Desencriptar</button>
+                    </div>
+
                 </div>
 
             </div>
 
         </div>
 
-        <div class="container-result">
 
-            <img src="images/Muñeco.png" id="image-doll">
-            <label id="message1"><strong>Ningún mensaje fue encontrado</strong></label>
-            <Label id="message2">Ingresa el texto que desees encriptar o desencriptar.</Label>
-            <textarea id="result" readonly> </textarea>
+        <div class="right" >
 
-            <div id="copy-dowland">
-                <button id="copy">Copiar</button>
-                <button id="dowland-button" onclick="downloadDocument()"><i class="fas fa-download download-icon"
-                        id="dowland"></i></button>
+            <div class="elements-right">
+                <img id="image-doll" src="images/Muñeco.png" alt="Imagen">
+                <label id="message1"><span>Ningún mensaje fue</span> <span>encontrado</span> </label>
+                <label id="message2"><span>Ingresa el texto que desees encriptar
+                        o</span><span>desencriptar</span></label>
+
+                <textarea id="result" ></textarea>
+                <div id="copy-dowland">
+                    <button id="copy-button">Copiar</button>
+                    <button id="dowland-button" onclick="downloadDocument()"><i class="fas fa-download download-icon"
+                            id="dowland"></i></button>
+                </div>
+
             </div>
-
 
         </div>
 
-
     </div>
+
+
+
+
 
     <script src="js/app.js"></script>
     <script src="js/seetAlert2.js"></script>
     <script src="https://unpkg.com/mammoth@1.0.0/mammoth.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
 </body>
 
 </html>

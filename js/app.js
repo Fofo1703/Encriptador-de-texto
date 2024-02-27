@@ -3,14 +3,15 @@ const textarea = document.getElementById('message');
 textarea.addEventListener('input', function () {
 	this.style.height = 'auto'; // Restaura la altura a la altura automática predeterminada
 	this.style.height = this.scrollHeight + 'px'; // Establece la altura según el contenido
+
 });
 
 
 
 function elementView() {//oculta o muestra los elementos
-	document.getElementById('copy').style.display = "block";
-	document.getElementById('result').style.display = "block";
+	document.getElementById('copy-button').style.display = "block";
 	document.getElementById('dowland-button').style.display = "block";
+	document.getElementById('result').style.display = "block";
 	document.getElementById('image-doll').style.display = "none";
 	document.getElementById('message1').style.display = "none";
 	document.getElementById('message2').style.display = "none";
@@ -29,17 +30,37 @@ function encryptText() {
 				text = text.replaceAll(matrixCode[i][0], matrixCode[i][1])//sustituye el valor original por uno nuevo 
 			}
 		}
+
+		var mediaQuery = window.matchMedia("(max-width: 1300px)");
+
 		document.getElementById(`result`).value = text;
 
 		document.getElementById(`message`).value = null;
 
+		document.getElementById(`message`).dispatchEvent(new Event('input'));
+
+		///////
+		var right = document.querySelector(".right");
+		var elementsRight = document.querySelector(".elements-right");
+		var mediaQuery = window.matchMedia("(max-width: 1300px)");
+
+		// Verifica si la media query se cumple
+		if (mediaQuery.matches) {
+			// Ajusta la altura solo si la media query se cumple
+			right.classList.add("right-expanded");
+			elementsRight.classList.add("elements-right-expanded");
+		}
+
+		/////
+
 		elementView();
+
+
 	} else {
 		documentError(`No has ingresado ningun texto`);
 	}
 
-
-}
+} 
 
 
 function decryptText() {
@@ -57,6 +78,8 @@ function decryptText() {
 		document.getElementById(`result`).value = text;
 
 		document.getElementById(`message`).value = null;
+
+		document.getElementById(`message`).dispatchEvent(new Event('input'));
 
 		elementView();
 
@@ -98,7 +121,7 @@ function handleFile() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-	var copiarBtn = document.getElementById('copy');
+	var copiarBtn = document.getElementById('copy-button');
 
 	copiarBtn.addEventListener('click', function () {
 		copyContent();
